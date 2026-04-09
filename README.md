@@ -1,6 +1,6 @@
 # C++ Secure Password Generator
 
-A lightweight, command-line password generator written in modern C++. It creates highly customizable, cryptographically safe (hardware-seeded) random passwords.
+A lightweight, command-line password generator written in modern C++. It creates highly customizable, almost cryptographically safe (hardware-seeded) random passwords.
 ## Features
 
 * **Customizable Length:** Generate passwords of any specific length.
