@@ -7,7 +7,7 @@ std::string Randompassword(int passwordLength, const std::string& charSet, int s
 
 int main() {
 
-    std::cout << "Enter password length : ";
+    std::cout << "Enter password length : " << "\n";
     int passwordLength = 0;
     std::cin >> passwordLength;
 
@@ -16,7 +16,7 @@ int main() {
         return 1;
     }
 
-    std::cout << "Enter the character sets you want to use (LDS) : ";
+    std::cout << "Enter the character sets you want to use (LDS) : " << "\n";
     std::string charSet;
     std::cin >> charSet;
 
@@ -27,7 +27,7 @@ int main() {
 
     std::cin.ignore(256, '\n');
 
-    std::cout << "Enter randomizer seed (press Enter to skip) : ";
+    std::cout << "Enter randomizer seed (press Enter to skip) : " << "\n";
     std::string seedInput;
 
     std::getline(std::cin, seedInput);
@@ -39,8 +39,13 @@ int main() {
         password = Randompassword(passwordLength, charSet);
     }
     else {
-        int seed = std::stoi(seedInput);
-        password = Randompassword(passwordLength, charSet, seed);
+        try {
+            int seed = std::stoi(seedInput);
+            password = Randompassword(passwordLength, charSet, seed);
+        } catch (...) {
+            std::cout << "Invalid seed format! Skipping seed \n";
+            password = Randompassword(passwordLength, charSet);
+        }
     }
 
     if (password.empty()) {
