@@ -20,7 +20,7 @@ If you are on an Arch-based system like EndeavourOS, ensure you have the basic b
 sudo pacman -S base-devel
 
 ##Compilation
-g++ -O2 Password-generator.cpp -o passgen
+g++ Password-generator.cpp -o passgen
 
 ##Run the program
 ./passgen
